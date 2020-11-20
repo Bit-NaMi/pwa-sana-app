@@ -1,14 +1,13 @@
 import React from 'react';
-  
-  
 
-  const NavBar = () => {
+
+  const NavBar = ({bookmarkicon, settingsicon, menuicon}) => {
     return (
-    <div className="navbar">
-      <button>More</button>
-      <button>Kirjanmerkit</button>
-      <button>pika-asetukset</button>
-    </div>
+    <nav className="navbar">
+      <a href=""><img src={menuicon} alt="Menu" /></a>
+      <a href=""><img src={bookmarkicon} alt="Kirjanmerkit" /></a>
+      <a href=""><img src={settingsicon} alt="pika-asetukset" /></a>
+    </nav>
   );
 }
 

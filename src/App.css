@@ -3,30 +3,23 @@
   height: 56px;
 }
 
-.navbar h3 {
-  display: inline-block;
-  text-align: left;
-  padding: 10px;
-  color: black;
-  text-decoration: none;
+.navbar img {
+ width: 24px;
+ margin: 10px;
 }
 
-.navbar a {
-  display: inline-block;
-  padding: 10px;
-  color: #fff;
-  text-decoration: none;
+.bottombar {
+  position: absolute;
+  bottom: 0px;
+  height: 56px;
+  width: 100%;
+  background-color: #AFB6EF;
 }
 
-.page-info {
-  padding: 10px;
-}
-
-.Current {
-  color: #2e8b57;
-}
-
-.Completed {
-  color: #ff6347;
-  text-decoration: line-through;
+.toolbar {
+ height: 48px;
+ margin: 1ch;
+ background-color: #C2C3E3;
+ text-align: center;
+ border-radius: 18px;
 }
