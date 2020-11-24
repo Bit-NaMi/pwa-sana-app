@@ -10,8 +10,6 @@ import SettingsIcon from './icons/settings.png'
 import MenuIcon from './icons/Menu.png'
 
 
-
-
 function App () {
     return (
      <div className="App">
