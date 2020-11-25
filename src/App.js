@@ -1,6 +1,6 @@
 import React from 'react';
 //import React, { Component } from 'react';
-// import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './Navbar.js';
 import Feed from './Feed.js';
@@ -12,11 +12,15 @@ import MenuIcon from './icons/Menu.png'
 
 function App () {
     return (
-     <div className="App">
+     <BrowserRouter>
        <NavBar bookmarkicon={BookmarkIcon} settingsicon={SettingsIcon} menuicon={MenuIcon} />
-       <Feed />
-       <BottomBar />
-     </div> 
+       <Switch>
+          <Route path="/">
+            <Feed />
+          </Route>
+        </Switch>
+        <BottomBar />
+     </BrowserRouter> 
     );
 }
 
