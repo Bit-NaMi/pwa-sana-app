@@ -9,11 +9,11 @@ import BookmarkIcon from './icons/bookmark.png'
 import SettingsIcon from './icons/settings.png'
 import MenuIcon from './icons/Menu.png'
 
-
 function App () {
     return (
      <BrowserRouter>
        <NavBar bookmarkicon={BookmarkIcon} settingsicon={SettingsIcon} menuicon={MenuIcon} />
+  
        <Switch>
           <Route path="/">
             <Feed />
@@ -25,3 +25,4 @@ function App () {
 }
 
 export default App;
+

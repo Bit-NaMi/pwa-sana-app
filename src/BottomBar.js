@@ -4,7 +4,6 @@ import React from 'react';
     return (
     <div className="bottombar">
       <button>Sana</button>
-      <button>KJV</button>
       <button>Lisää</button>
     </div>
   );

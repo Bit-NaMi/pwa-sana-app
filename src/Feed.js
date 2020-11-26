@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-
-  const Feed = () => {
+import Search from './components/Search'
+ 
+const Feed = () => {
     const axios = require('axios');
     const [feed, setFeed] = useState(undefined)
 
     useEffect(() => {
       if(!feed) {
-      axios.get(`https://bible-api.com/john%203:16`)
+      axios.get(`https://bible-api.com/john 1`)
       .then(function (response) {
         // handle success
        setFeed(response)
@@ -24,17 +25,21 @@ import { Switch, Route, Link } from 'react-router-dom';
     
         <div className="toolbar">
           <Link to="search">search</Link>
-          <button>book/chapter</button>
-          <button>version</button>
+          <select name="book"><option>book/chapter</option></select>
+          <select name="version"><option>version</option></select>
           <button>bookmark</button>
         </div>
+        
         <Switch>
           <Route path="/search">
-            <div> Haku</div>
+            <Search />
+            
           </Route>
           <Route path="/">
             <div className="texts">
-             {feed && feed.data.text}
+            <h3>{feed && feed.data.reference}</h3>
+            <p>{feed && feed.data.text}</p>
+             
             </div>
           </Route>
         </Switch>
@@ -44,4 +49,4 @@ import { Switch, Route, Link } from 'react-router-dom';
   );
 }
 
-export default Feed
+export default Feed 
