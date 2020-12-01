@@ -3,7 +3,7 @@
   height: 56px;
   width: 100%;
   display: grid;
-  grid-template-columns: 6fr 1fr 1fr;
+  grid-template-columns: 7fr 1fr 1fr;
 }
 
 .menuicon {
@@ -13,14 +13,17 @@
 
 .bookmarkicon {
   grid-column-start: 2;
+  justify-self: center;
 }
 
 .settingsicon {
   grid-column-start: 3;
+  justify-self: center;
 }
 
 .navbar img {
-  height: 24px;
+  margin: 12px;
+  width: 26px;
 }
 
 
@@ -48,4 +51,8 @@
   height: 56px;
   width: 100%;
   background-color: #AFB6EF;
+}
+
+.plusicon img {
+  width: 25px;
 }

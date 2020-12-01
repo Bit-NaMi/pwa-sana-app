@@ -1,10 +1,10 @@
 import React from 'react';
   
-  const BottomBar = () => {
+  const BottomBar = ({plusicon}) => {
     return (
     <div className="bottombar">
-      <button>Sana</button>
-      <button>Lisää</button>
+      <div>Sana</div>
+      <div className="plusicon"><img src={plusicon} alt="Add new page" /></div>
     </div>
   );
 }

@@ -8,6 +8,7 @@ import BottomBar from './BottomBar.js'
 import BookmarkIcon from './icons/bookmark.png'
 import SettingsIcon from './icons/settings.png'
 import MenuIcon from './icons/Menu.png'
+import PlusIcon from './icons/plus.png'
 
 function App () {
     return (
@@ -19,7 +20,7 @@ function App () {
             <Feed />
           </Route>
         </Switch>
-        <BottomBar />
+        <BottomBar plusicon={PlusIcon} />
      </BrowserRouter> 
     );
 }
