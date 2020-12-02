@@ -3,7 +3,7 @@
   height: 56px;
   width: 100%;
   display: grid;
-  grid-template-columns: 7fr 1fr 1fr;
+  grid-template-columns: 12fr 1fr 1fr;
 }
 
 .menuicon {
@@ -22,7 +22,7 @@
 }
 
 .navbar img {
-  margin: 12px;
+  margin: 14px;
   width: 26px;
 }
 
@@ -43,6 +43,10 @@
  position: -webkit-sticky; /* Safari */
  position: sticky;
  top: 0.5ch;
+}
+
+.toolbar img {
+  max-width: 25px;
 }
 
 .bottombar {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Version = ({openalert}) => {
+const Version = ({selectedversion}) => {
     const [version, setVersion] = useState([])
     axios.defaults.headers.common['api-key']='6f9c7d0c19762a205018465f47308c71'
 
@@ -22,10 +22,10 @@ const Version = ({openalert}) => {
   
       return (
         <div className="Version">
-            <select onChange={e => openalert(e.target.value)}>
+            <select onChange={e => selectedversion(e.target.value)}>
               
               {version.map(version => (
-                <option key={version.id } value={version.id}>{version.name}</option>
+                <option key={version.id} value={version.id}>{version.name}</option>
               ))}
             
             </select>          

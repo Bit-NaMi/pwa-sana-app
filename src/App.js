@@ -9,6 +9,7 @@ import BookmarkIcon from './icons/bookmark.png'
 import SettingsIcon from './icons/settings.png'
 import MenuIcon from './icons/Menu.png'
 import PlusIcon from './icons/plus.png'
+import SearchIcon from './icons/Search.png'
 
 function App () {
     return (
@@ -17,7 +18,7 @@ function App () {
   
        <Switch>
           <Route path="/">
-            <Feed />
+            <Feed searchicon={SearchIcon}/>
           </Route>
         </Switch>
         <BottomBar plusicon={PlusIcon} />

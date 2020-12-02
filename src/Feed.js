@@ -8,38 +8,45 @@ import Chapter from './components/Chapter';
 
 
  
-const Feed = () => {
+const Feed = ({searchicon}) => {
  
+  axios.defaults.headers.common['api-key']='6f9c7d0c19762a205018465f47308c71'
+  
   const [verses, setVerses] = useState([])
-  const [versionId, setVersionId] = useState('06125adad2d5898a-01')
+  const [versionId, setVersionId] = useState('0c2ff0a5c8b9069c-01')
+  const [bookId, setBookId] = useState('MRK')
 
-  // axios.defaults.headers.common['api-key']='6f9c7d0c19762a205018465f47308c71'
+  
 
   useEffect(() => {
     const fetchVerses = async () => {
-  const result = await axios(`https://www.abibliadigital.com.br/api/verses/bbe/sl/27`)
+    const result = await axios(`https://api.scripture.api.bible/v1/bibles/0c2ff0a5c8b9069c-01/chapters/MRK.1/sections`)
   // const result = await axios(`https://api.scripture.api.bible/v1/bibles`)
 
-  console.log(result.data.verses)
+  console.log(result.data.data)
 
-  setVerses(result.data.verses)
+  setVerses(result.data.data)
   }
   
   fetchVerses()
 }, []) 
 
-const openAlert = (versionId) => {
+const selectedVersion = (versionId) => {
   setVersionId(versionId)
+}
+
+const selectedBook = (bookId) => {
+  setBookId(bookId)
 }
  
     return (
       <div className="feed">
     
         <div className="toolbar">
-          <Link to="search">search</Link>
-          <Book versionid={versionId} />
-          <Version openalert={openAlert}/>
-          <Chapter/>
+          <Link to="search"><img src={searchicon} alt='Search' /></Link>
+          <Book versionid={versionId} selectedbook={selectedBook} />
+          <Version selectedversion={selectedVersion}/>
+          <Chapter bookid={bookId} versionid={versionId}/>
           <button>bookmark</button>
         </div>
         
@@ -53,8 +60,8 @@ const openAlert = (versionId) => {
             <div className="texts">
                 <div className="verses">
                   
-                  {verses.map(verses => (
-                    <p key={verses.number}>{verses.number + " " + verses.text}</p>
+                  {verses.map(verses => ( 
+                    <p key={verses.id}>{verses.bookId}</p>
                   ))}
                 
                 </div>

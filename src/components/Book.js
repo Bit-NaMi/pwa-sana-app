@@ -1,7 +1,7 @@
-import React, { useState, useEffect, version } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Book = ({versionid}) => {
+const Book = ({selectedbook, versionid}) => {
     const [book, setBook] = useState([])
     axios.defaults.headers.common['api-key']='6f9c7d0c19762a205018465f47308c71'
 
@@ -16,19 +16,19 @@ const Book = ({versionid}) => {
       }
   
       fetchBook()
-    }, [versionid ])
+    }, [versionid])
   
   
       return (
         <div className="Book">
-            <select>
+            <select onChange={e => selectedbook(e.target.value)}>
               
               {book.map(book => (
-                <option key={book.name}>{book.name}</option>
+                <option key={book.name} value={book.id}>{book.name}</option>
               ))}
             
             </select> 
-              <div>{versionid}</div>        
+              {/* <div>{versionid}</div>    */}
           
       </div>
     );
