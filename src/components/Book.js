@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, version } from 'react';
 import axios from 'axios';
 
-const Book = () => {
+const Book = ({versionid}) => {
     const [book, setBook] = useState([])
+    axios.defaults.headers.common['api-key']='6f9c7d0c19762a205018465f47308c71'
 
       useEffect(() => {
         const fetchBook = async () => {
-      const result = await axios(`https://www.abibliadigital.com.br/api/books`)
-    
+      const result = await axios(`https://api.scripture.api.bible/v1/bibles/${versionid}/books`)
   
-      console.log(result.data)
+      console.log('books', result.data.data)
 
-      setBook(result.data)
+      setBook(result.data.data)
       
       }
   
       fetchBook()
-    }, [])
+    }, [versionid ])
   
   
       return (
@@ -27,7 +27,8 @@ const Book = () => {
                 <option key={book.name}>{book.name}</option>
               ))}
             
-            </select>          
+            </select> 
+              <div>{versionid}</div>        
           
       </div>
     );
