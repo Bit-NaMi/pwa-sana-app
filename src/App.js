@@ -10,6 +10,8 @@ import SettingsIcon from './icons/settings.png'
 import MenuIcon from './icons/Menu.png'
 import PlusIcon from './icons/plus.png'
 import SearchIcon from './icons/Search.png'
+import AddBookmarkIcon from './icons/addbookmark.png'
+import Logo from './icons/logo.png'
 
 function App () {
     return (
@@ -18,10 +20,10 @@ function App () {
   
        <Switch>
           <Route path="/">
-            <Feed searchicon={SearchIcon}/>
+            <Feed searchicon={SearchIcon} addbookmarkicon={AddBookmarkIcon}/>
           </Route>
         </Switch>
-        <BottomBar plusicon={PlusIcon} />
+        <BottomBar plusicon={PlusIcon} logo={Logo} />
      </BrowserRouter> 
     );
 }

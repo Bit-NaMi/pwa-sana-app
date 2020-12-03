@@ -1,9 +1,9 @@
 import React from 'react';
   
-  const BottomBar = ({plusicon}) => {
+  const BottomBar = ({plusicon, logo}) => {
     return (
     <div className="bottombar">
-      <div>Sana</div>
+      <div className="logo"><img src={logo} alt="Home feed" /></div>
       <div className="plusicon"><img src={plusicon} alt="Add new page" /></div>
     </div>
   );

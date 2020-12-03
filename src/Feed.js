@@ -8,7 +8,7 @@ import Chapter from './components/Chapter';
 
 
  
-const Feed = ({searchicon}) => {
+const Feed = ({searchicon, addbookmarkicon}) => {
  
   axios.defaults.headers.common['api-key']='6f9c7d0c19762a205018465f47308c71'
   
@@ -47,7 +47,7 @@ const selectedBook = (bookId) => {
           <Book versionid={versionId} selectedbook={selectedBook} />
           <Version selectedversion={selectedVersion}/>
           <Chapter bookid={bookId} versionid={versionId}/>
-          <button>bookmark</button>
+          <div><img src={addbookmarkicon} alt='Add bookmark' /></div>
         </div>
         
         

@@ -32,7 +32,7 @@ const Book = ({selectedbook, versionid}) => {
       return (
         <div className="Book">
       
-      <div className="DropdownHeader" onClick={toggling}>{selectedOption || 'mrk'}</div> 
+      <div className="DropdownHeader" onClick={toggling}>{selectedOption || 'Book/Chapter'}</div> 
               {isOpen && (
               <div className="DropdownContainer" >
                 <ul className="DropdownList" onChange={e => selectedbook(e.target.value)}>
