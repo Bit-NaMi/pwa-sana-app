@@ -20,7 +20,7 @@ const Feed = ({searchicon}) => {
 
   useEffect(() => {
     const fetchVerses = async () => {
-    const result = await axios(`https://api.scripture.api.bible/v1/bibles/0c2ff0a5c8b9069c-01/chapters/MRK.1/sections`)
+    const result = await axios(`https://api.scripture.api.bible/v1/bibles/0c2ff0a5c8b9069c-01/verses/MRK.intro.0?content-type=html&include-notes=false&include-titles=true&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=false&use-org-id=false`)
   // const result = await axios(`https://api.scripture.api.bible/v1/bibles`)
 
   console.log(result.data.data)
@@ -59,10 +59,10 @@ const selectedBook = (bookId) => {
           <Route path="/">
             <div className="texts">
                 <div className="verses">
-                  
-                  {verses.map(verses => ( 
-                    <p key={verses.id}>{verses.bookId}</p>
-                  ))}
+                  {verses.content}
+                  {/* {verses.map(verses => ( 
+                    <p key={verses.id}>{verses.content}</p>
+                  ))} */}
                 
                 </div>
             </div>

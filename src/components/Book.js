@@ -26,9 +26,9 @@ const Book = ({selectedbook, versionid}) => {
     const onOptionClicked = value => () => {
       setSelectedOption(value);
       setIsOpen(false);
-      console.log(selectedOption);
+     
   };
-  
+  console.log(selectedOption);
       return (
         <div className="Book">
       
@@ -37,7 +37,7 @@ const Book = ({selectedbook, versionid}) => {
               <div className="DropdownContainer" >
                 <ul className="DropdownList" onChange={e => selectedbook(e.target.value)}>
                 {book.map(book => (
-                  <li className="ListItem" onClick={onOptionClicked(book.name)} key={book.id}>{book.name}</li>
+                  <li className="ListItem" onClick={onOptionClicked(book.abbreviation)} key={book.id} value={book.id}>{book.name}</li>
                   ))}
                   </ul>
                   </div>
