@@ -15,12 +15,13 @@ const Feed = ({searchicon, addbookmarkicon}) => {
   const [verses, setVerses] = useState([])
   const [versionId, setVersionId] = useState('0c2ff0a5c8b9069c-01')
   const [bookId, setBookId] = useState('MRK')
+  const [chapterId, setChapterId] = useState('MRK.1')
 
   
 
   useEffect(() => {
     const fetchVerses = async () => {
-    const result = await axios(`https://api.scripture.api.bible/v1/bibles/0c2ff0a5c8b9069c-01/chapters/MRK.1`)
+    const result = await axios(`https://api.scripture.api.bible/v1/bibles/${versionId}/chapters/${chapterId}`)
   // const result = await axios(`https://api.scripture.api.bible/v1/bibles`)
 
   console.log("verses",result.data.data)
@@ -29,7 +30,7 @@ const Feed = ({searchicon, addbookmarkicon}) => {
   }
   
   fetchVerses()
-}, []) 
+}, [chapterId,versionId]) 
 
 const selectedVersion = (versionId) => {
   setVersionId(versionId)
@@ -39,6 +40,9 @@ const selectedBook = (bookId) => {
   setBookId(bookId)
 }
 
+const selectedChapter = (chapterId) => {
+  setChapterId(chapterId)
+}
 
 const createMarkup = () => {
   return {__html: verses.content};
@@ -50,9 +54,9 @@ const createMarkup = () => {
     
         <div className="toolbar">
           <Link to="search"><img src={searchicon} alt='Search' /></Link>
-          <Book versionid={versionId} selectedbook={selectedBook} />
-          <Version selectedversion={selectedVersion}/>
-          <Chapter bookid={bookId} versionid={versionId}/>
+          <Book className="toolbarItem" versionid={versionId} selectedbook={selectedBook} />
+          <Version className="toolbarItem" selectedversion={selectedVersion}/>
+          <Chapter bookid={bookId} versionid={versionId} selectedchapter={selectedChapter}/>
           <div><img src={addbookmarkicon} alt='Add bookmark' /></div>
         </div>
         
@@ -65,7 +69,7 @@ const createMarkup = () => {
           <Route path="/">
             <div className="texts">
                 <div className="verses">
-                  
+
                 <div dangerouslySetInnerHTML={createMarkup()} />
                 
                 </div>
