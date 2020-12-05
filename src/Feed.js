@@ -37,7 +37,6 @@ const selectedVersion = (versionId) => {
 
 const selectedBook = (bookId) => {
   setBookId(bookId)
-  console.log(bookId)
 }
 
 
@@ -66,11 +65,8 @@ const createMarkup = () => {
           <Route path="/">
             <div className="texts">
                 <div className="verses">
+                  
                 <div dangerouslySetInnerHTML={createMarkup()} />
-                
-                  {/* {verses.map(verses => ( 
-                    <p key={verses.id}>{verses.content}</p>
-                  ))} */}
                 
                 </div>
             </div>

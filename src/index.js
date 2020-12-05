@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import './fonts/Kefa-Regular.ttf';
+import './fonts/Kollektif-Bold.ttf';
+import './fonts/Kollektif.ttf';
+import './fonts/euphemia.ttf';
 
 ReactDOM.render(
   <React.StrictMode>

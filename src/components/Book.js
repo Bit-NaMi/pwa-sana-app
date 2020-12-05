@@ -28,9 +28,11 @@ const Book = ({selectedbook, versionid}) => {
       selectedbook(book.id);
       setIsOpen(false);
       console.log('clicked')
-     
-  };
+    };
+
   console.log(selectedOption);
+
+  
       return (
         <div className="Book">
       
@@ -43,17 +45,7 @@ const Book = ({selectedbook, versionid}) => {
                   ))}
                   </ul>
                   </div>
-
-            )}
-                
-            {/* <select onChange={e => selectedbook(e.target.value)}>
-              
-              {book.map(book => (
-                <option key={book.name} value={book.id}>{book.name}</option>
-              ))}
-            
-            </select> 
-              <div>{versionid}</div>    */}
+             )}
           
       </div>
     );

@@ -2,33 +2,48 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Version = ({selectedversion}) => {
-    const [version, setVersion] = useState([])
+    const [versions, setVersions] = useState([])
     axios.defaults.headers.common['api-key']='6f9c7d0c19762a205018465f47308c71'
 
       useEffect(() => {
-        const fetchVersion = async () => {
+        const fetchVersions = async () => {
       const result = await axios(`https://api.scripture.api.bible/v1/bibles`)
     
   
-      console.log(result.data.data)
+      console.log('versions', result.data.data)
 
-      setVersion(result.data.data)
+      setVersions(result.data.data)
       
       }
   
-      fetchVersion()
+      fetchVersions()
     }, [])
+
+    const [isOpen, setIsOpen] = useState(false);
+    const toggling = () => setIsOpen(!isOpen);
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    const onOptionClicked = version => {
+      setSelectedOption(version.abbreviation);
+      selectedversion(version.id);
+      setIsOpen(false);
+      console.log('clicked')
+    };
   
   
       return (
         <div className="Version">
-            <select onChange={e => selectedversion(e.target.value)}>
-              
-              {version.map(version => (
-                <option key={version.id} value={version.id}>{version.name}</option>
-              ))}
-            
-            </select>          
+
+<div className="DropdownHeader" onClick={toggling}>{selectedOption || 'Version'}</div> 
+              {isOpen && (
+              <div className="DropdownContainer" >
+                <ul className="DropdownList">
+                {versions.map(version => (
+                  <li className="ListItem" onClick={e => onOptionClicked(version)} key={version.id} value={version.id}>{version.name}</li>
+                  ))}
+                  </ul>
+                  </div>
+             )}     
           
       </div>
     );
