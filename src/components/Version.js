@@ -34,7 +34,7 @@ const Version = ({selectedversion}) => {
       return (
         <div className="Version">
 
-<div className="DropdownHeader" onClick={toggling}>{selectedOption || 'Version'}</div> 
+<div className="DropdownHeader" onClick={toggling}>{selectedOption || 'Versio'}</div> 
               {isOpen && (
               <div className="DropdownContainer" >
                 <ul className="DropdownList">

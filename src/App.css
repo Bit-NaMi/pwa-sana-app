@@ -2,6 +2,7 @@ body{
   font-family: 'euphemia';
 }
 
+/* Navbar style */
 .navbar {
   background-color: #1C154D;
   height: 56px;
@@ -31,13 +32,7 @@ body{
   width: 26px;
 }
 
-
-
-.verses{
-  margin-top: 10%;
-  margin-bottom: 10%;
-  padding:0 14% 10% 14%;
-}
+/* Floating toolbar styles */
 
 .toolbar {
  height: 48px;
@@ -54,13 +49,34 @@ body{
  align-content: center;
 }
 
-.toolbarItem{
+.DropdownContainer{
   position: fixed;
+  width: 105%;
+  height: 1000%;
+  background-color: #FFF9F0;
+  top: 56px;
+  left: -1ch;
+  overflow: auto;
+}
+
+.ListItem {
+  list-style-type: none;
+  text-align: left;
 }
 
 .toolbar img {
   max-width: 28px;
 }
+
+/* Displayed verses styles */
+
+.verses{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  padding:0 14% 10% 14%;
+}
+
+/* bottombar styles */
 
 .bottombar {
   position: fixed;
@@ -98,3 +114,4 @@ body{
 .plusicon img{
   width: 22px;
 }
+

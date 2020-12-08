@@ -36,7 +36,7 @@ const Book = ({selectedbook, versionid}) => {
       return (
         <div className="Book">
       
-      <div className="DropdownHeader" onClick={toggling}>{selectedOption || 'Book/Chapter'}</div> 
+      <div className="DropdownHeader" onClick={toggling}>{selectedOption || 'Kirja'}</div> 
               {isOpen && (
               <div className="DropdownContainer" >
                 <ul className="DropdownList">

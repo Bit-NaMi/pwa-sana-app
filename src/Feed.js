@@ -55,8 +55,8 @@ const createMarkup = () => {
         <div className="toolbar">
           <Link to="search"><img src={searchicon} alt='Search' /></Link>
           <Book className="toolbarItem" versionid={versionId} selectedbook={selectedBook} />
-          <Version className="toolbarItem" selectedversion={selectedVersion}/>
           <Chapter bookid={bookId} versionid={versionId} selectedchapter={selectedChapter}/>
+          <Version className="toolbarItem" selectedversion={selectedVersion}/>
           <div><img src={addbookmarkicon} alt='Add bookmark' /></div>
         </div>
         
