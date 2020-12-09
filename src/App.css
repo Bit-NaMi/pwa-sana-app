@@ -1,5 +1,7 @@
 body{
   font-family: 'euphemia';
+  color: #2B2727;
+  letter-spacing: 0.4px;
 }
 
 /* Navbar style */
@@ -47,6 +49,23 @@ body{
  display: grid;
  grid-template-columns: auto auto auto auto auto;
  align-content: center;
+ font-family: 'Kollektif';
+ color: #8B93C9;
+}
+
+.Chapter {
+  display: grid;
+  align-content: center;
+}
+
+.Book {
+  display: grid;
+  align-content: center;
+}
+
+.Version {
+  display: grid;
+  align-content: center;
 }
 
 .DropdownContainer{
@@ -57,11 +76,14 @@ body{
   top: 56px;
   left: -1ch;
   overflow: auto;
+  font-family: 'euphemia';
+  
 }
 
 .ListItem {
   list-style-type: none;
   text-align: left;
+  color: #2B2727
 }
 
 .toolbar img {
@@ -74,6 +96,12 @@ body{
   margin-top: 10%;
   margin-bottom: 10%;
   padding:0 14% 10% 14%;
+}
+
+h4 {
+  font-family: 'Kollektif-Bold';
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 /* bottombar styles */

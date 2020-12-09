@@ -54,9 +54,9 @@ const createMarkup = () => {
     
         <div className="toolbar">
           <Link to="search"><img src={searchicon} alt='Search' /></Link>
-          <Book className="toolbarItem" versionid={versionId} selectedbook={selectedBook} />
+          <Book versionid={versionId} selectedbook={selectedBook} />
           <Chapter bookid={bookId} versionid={versionId} selectedchapter={selectedChapter}/>
-          <Version className="toolbarItem" selectedversion={selectedVersion}/>
+          <Version selectedversion={selectedVersion}/>
           <div><img src={addbookmarkicon} alt='Add bookmark' /></div>
         </div>
         
@@ -69,7 +69,7 @@ const createMarkup = () => {
           <Route path="/">
             <div className="texts">
                 <div className="verses">
-
+                <h4>{verses.reference}</h4>
                 <div dangerouslySetInnerHTML={createMarkup()} />
                 
                 </div>
